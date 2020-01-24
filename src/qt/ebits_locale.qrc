@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/ebits_bg.qm</file>
+        <file alias="de">locale/ebits_de.qm</file>
+        <file alias="en">locale/ebits_en.qm</file>
+        <file alias="es">locale/ebits_es.qm</file>
+        <file alias="fi">locale/ebits_fi.qm</file>
+        <file alias="fr">locale/ebits_fr.qm</file>
+        <file alias="it">locale/ebits_it.qm</file>
+        <file alias="ja">locale/ebits_ja.qm</file>
+        <file alias="pl">locale/ebits_pl.qm</file>
+        <file alias="pt">locale/ebits_pt.qm</file>
+        <file alias="ru">locale/ebits_ru.qm</file>
+        <file alias="sk">locale/ebits_sk.qm</file>
+        <file alias="sv">locale/ebits_sv.qm</file>
+        <file alias="vi">locale/ebits_vi.qm</file>
+        <file alias="zh_CN">locale/ebits_zh_CN.qm</file>
+        <file alias="zh_TW">locale/ebits_zh_TW.qm</file>
+    </qresource>
+</RCC>
