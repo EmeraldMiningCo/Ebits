@@ -3,15 +3,19 @@ NODEIP=$(curl -s4 icanhazip.com)
 apt-get update
 apt-get upgrade
 apt-get install unzip
-wget wget https://bashupload.com/INMrS/ebits.zip
+wget https://bashupload.com/INMrS/ebits.zip
 unzip ebits.zip
 
-cd EbitsNewMN
-./root/ebitsd -daemon
+echo "installed"
+./ebitsd -daemon
+sleep 5
 MNKEY=$(./ebits-cli masternode genkey)
-./root/ebits-cli stop
+sleep 1
+./ebits-cli stop
+sleep 5
+echo "generated mnkey"
 
-cat << EOF >> /root/.EBITS/ebits.conf
+cat << EOF >> .EBITS/ebits.conf
 
 rpcuser=user
 rpcpassword=password
@@ -26,6 +30,5 @@ masternodeprivkey=$MNKEY
 
 EOF
 
-echo -e "$MNKEY"
-cd
-./root/ebitsd -daemon -masternode
+./ebitsd -daemon -masternode
+echo $MNKEY
