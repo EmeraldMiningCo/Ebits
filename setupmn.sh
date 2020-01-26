@@ -4,14 +4,15 @@ apt-get update
 apt-get upgrade
 apt-get install unzip
 wget https://github.com/EmeraldMiningCo/Ebits/releases/download/0.17.0/EbitsLinux.zip
-unzip ebits.zip
+unzip EbitsLinux.zip
 
 echo "installed"
-./ebitsd -daemon
+
+./EbitsLinux/ebitsd -daemon
 sleep 5
-MNKEY=$(./ebits-cli masternode genkey)
+MNKEY=$(./EbitsLinux/ebits-cli masternode genkey)
 sleep 1
-./ebits-cli stop
+./EbitsLinux/ebits-cli stop
 sleep 5
 echo "generated mnkey"
 
@@ -30,5 +31,6 @@ masternodeprivkey=$MNKEY
 
 EOF
 
-./ebitsd -daemon -masternode
+./EbitsLinux/ebitsd -daemon -masternode
+echo $NODEIP
 echo $MNKEY
