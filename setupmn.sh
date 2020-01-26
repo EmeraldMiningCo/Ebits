@@ -3,7 +3,7 @@ NODEIP=$(curl -s4 icanhazip.com)
 apt-get update
 apt-get upgrade
 apt-get install unzip
-wget https://bashupload.com/INMrS/ebits.zip
+wget https://github.com/EmeraldMiningCo/Ebits/releases/download/0.17.0/EbitsLinux.zip
 unzip ebits.zip
 
 echo "installed"
