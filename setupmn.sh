@@ -3,16 +3,16 @@ NODEIP=$(curl -s4 icanhazip.com)
 apt-get update
 apt-get upgrade
 apt-get install unzip
-wget https://github.com/EmeraldMiningCo/Ebits/releases/download/0.17.0/EbitsLinux.zip
-unzip EbitsLinux.zip
+wget https://github.com/EmeraldMiningCo/Ebits/releases/download/0.17.1/Ebits0171Linux.zip
+unzip Ebits0171Linux.zip
 
 echo "installed"
 
-./EbitsLinux/ebitsd -daemon
+./Linux/ebitsd -daemon
 sleep 5
-MNKEY=$(./EbitsLinux/ebits-cli masternode genkey)
+MNKEY=$(./Linux/ebits-cli masternode genkey)
 sleep 1
-./EbitsLinux/ebits-cli stop
+./Linux/ebits-cli stop
 sleep 5
 echo "generated mnkey"
 
@@ -28,9 +28,17 @@ rpcport=99901
 staking=0
 masternode=1
 masternodeprivkey=$MNKEY
+addnode=155.138.242.159:15350
+addnode=209.250.253.96:15350
+addnode=144.202.48.69:15350
+addnode=134.209.198.90:15350
+addnode=2.111.74.86:15350
+addnode=178.128.34.150:15350
+addnode=138.197.141.68:15350
+addnode=157.230.124.196:15350
 
 EOF
 
-./EbitsLinux/ebitsd -daemon -masternode
+./Linux/ebitsd -daemon -masternode
 echo $NODEIP
 echo $MNKEY
