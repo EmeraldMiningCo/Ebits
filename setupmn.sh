@@ -10,7 +10,7 @@ echo "installed"
 
 ./Ebits0172Linux/ebitsd -daemon
 sleep 5
-MNKEY=$(./Linux/ebits-cli masternode genkey)
+MNKEY=$(./Ebits0172Linux/ebits-cli masternode genkey)
 sleep 1
 ./Ebits0172Linux/ebits-cli stop
 sleep 5
