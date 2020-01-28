@@ -4,7 +4,7 @@ apt-get update
 apt-get upgrade
 apt-get install unzip
 wget https://github.com/EmeraldMiningCo/Ebits/releases/download/0.17.1/Ebits0171Linux.zip
-unzip Ebits0171Linux.zip
+unzip Ebits0172Linux.zip
 
 echo "installed"
 
