@@ -3,7 +3,7 @@
 TMP_FOLDER=$(mktemp -d)
 USERNAME='ebitsmn'
 CONFIG_FILE='ebits.conf'
-CONFIGFOLDER='/home/ebitsmn/.EBITS'
+CONFIGFOLDER='/root/.EBITS'
 COIN_DAEMON='ebitsd'
 COIN_CLI='ebits-cli'
 COIN_PATH='/usr/local/bin/'
@@ -28,7 +28,7 @@ printf "Hello,  \n Enter 1 for Install Masternode \n Enter 2 for Update Masterno
 read choice
 if (($choice == 1 )) 
  then
-	create_user
+	#create_user
 	cleanup_mess
 	#checks
 	prepare_system
@@ -43,7 +43,7 @@ if (($choice == 1 ))
 	exit 
 elif (($choice == 2 ))
  then
-	create_user
+	#create_user
 	backup
 	save_key
 	cleanup_mess
@@ -76,7 +76,7 @@ function cleanup_mess() {
 	rm setup*
 	rm doge.txt*
 	rm block*
-	cd /$USERNAME
+	cd /root/
 	rm -rf .EBITS
 	rm ebits*
 	rm -rf Ebits*
@@ -87,7 +87,7 @@ function cleanup_mess() {
 	rm ebits*
 	rm test_ebits
 	rm block*
-	cd /$USERNAME
+	cd /root/
 }
 
 function create_user() {
@@ -172,8 +172,8 @@ function configure_systemd() {
 Description=$COIN_NAME service
 After=network.target
 [Service]
-User=$USERNAME
-Group=$USERNAME
+User=root
+Group=root
 #Type=forking
 PIDFile=$CONFIGFOLDER/$COIN_NAME.pid
 ExecStart=$COIN_PATH$COIN_DAEMON -daemon -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER
@@ -211,6 +211,7 @@ listen=1
 server=1
 daemon=1
 rpcport=$RPC_PORT
+port=$COIN_PORT
 EOF
 }
 
@@ -251,27 +252,27 @@ EOF
 }
 
 function save_key() {
-	cd /$USERNAME/.EBITS
-	mv /$USERNAME/.EBITS/ebits.conf /$USERNAME/.EBITS/ebits_old.conf
-	cp /$USERNAME/.EBITS/ebits_old.conf /$USERNAME
+	cd /root/.EBITS
+	mv /root/.EBITS/ebits.conf /root/.EBITS/ebits_old.conf
+	cp /root/.EBITS/ebits_old.conf /root
 }
 
 function restore_key() {
-	cd /$USERNAME/.EBITS
+	cd /root/.EBITS
 	rm masternode.conf
-	cp /$USERNAME/ebits_old.conf /$USERNAME/.EBITS
-	mv /$USERNAME/.EBITS/ebits_old.conf /$USERNAME/.EBITS/ebits.conf
+	cp /root/ebits_old.conf /root/.EBITS
+	mv /root/.EBITS/ebits_old.conf /root/.EBITS/ebits.conf
 }
 
 function backup() {
-	echo -e "We are going to zip all files to /$USERNAME as a backup before applying bootstrap."
+	echo -e "We are going to zip all files to /root as a backup before applying bootstrap."
 	apt-get install -y zip unzip
-	cd /$USERNAME/.EBITS
+	cd /root/.EBITS
 	rm -rf blocks_
 	rm -rf blocks-
 	rm blocks.sh
-	zip -r backupdg.zip /$USERNAME/.EBITS
-	cp /$USERNAME/.EBITS/backupdg.zip /$USERNAME
+	zip -r backupdg.zip /root/.EBITS
+	cp /root/.EBITS/backupdg.zip /root
 	
 }
 
@@ -338,7 +339,8 @@ fi
 
 function prepare_system() {
  cd ~
-   wget https://raw.githubusercontent.com/EmeraldMiningCo/Ebits/master/ebits.txt
+    wget https://raw.githubusercontent.com/EmeraldMiningCo/Ebits/master/ebits.txt
+#   wget https://gist.githubusercontent.com/Liquid369/eca7f89b6c4e63f9b328d92a4f508626/raw/ba14590e3f600acdf8683eeb16cc8b2f9c8fb23e/dogec.txt
 #  wget https://gist.githubusercontent.com/hoserdude/9661c9cdc4b59cf5f001/raw/5972d4d838691c1a1f33fb274f97fa0b403d10bd/doge.txt
   cat ebits.txt
 printf "%s\n"
