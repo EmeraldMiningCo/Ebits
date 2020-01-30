@@ -137,6 +137,7 @@ function download_node() {
   cd ~
   wget -q $COIN_TGZ
   compile_error
+  apt-get install -y unzip
 #   tar xvzf $COIN_ZIP -C $COIN_PATH >/dev/null 2>&1
 unzip Ebits0172Linux.zip
 cd Ebits0172Linux
