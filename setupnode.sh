@@ -3,7 +3,7 @@
 TMP_FOLDER=$(mktemp -d)
 USERNAME='ebitsmn'
 CONFIG_FILE='ebits.conf'
-CONFIGFOLDER='/$USERNAME/.EBITS'
+CONFIGFOLDER='/home/ebitsmn/.EBITS'
 COIN_DAEMON='ebitsd'
 COIN_CLI='ebits-cli'
 COIN_PATH='/usr/local/bin/'
@@ -24,7 +24,7 @@ NC='\033[0m'
 
 function ask_for_bootstrap() {
 
-printf "Hello Doge,  \n Enter 1 for Install DogeNode \n Enter 2 for Update DogeNode \n Enter 3 for bootstrap. \n "
+printf "Hello,  \n Enter 1 for Install Masternode \n Enter 2 for Update Masternode \n Enter 3 for bootstrap. \n "
 read choice
 if (($choice == 1 )) 
  then
