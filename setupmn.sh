@@ -28,6 +28,16 @@ rpcport=99901
 staking=0
 masternode=1
 masternodeprivkey=$MNKEY
+addnode = 136.244.107.116:55350 
+addnode = 144.202.26.222:55350 
+addnode = 45.32.213.51:55350 
+addnode = 144.202.48.69:55350 
+addnode = 155.138.242.159:55350 
+addnode = 209.246.143.26:55350 
+addnode = 144.202.76.108:55350 
+addnode = 167.179.116.117:55350 
+addnode = 45.77.229.250:55350 
+addnode = 45.63.78.82:55350 
 
 EOF
 
