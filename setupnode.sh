@@ -131,9 +131,9 @@ function compile_node() {
 function download_node() {
   echo -e "Prepare to download ${GREEN}$COIN_NAME${NC}."
   cd ~ >/dev/null 2>&1
-  rm -rf dogecash*
+  rm -rf Ebits*
   cd $COIN_PATH
-  rm -rf dogecash*
+  rm -rf ebits*
   cd ~
   wget -q $COIN_TGZ
   compile_error
@@ -336,9 +336,9 @@ fi
 
 function prepare_system() {
  cd ~
-   wget https://gist.githubusercontent.com/Liquid369/eca7f89b6c4e63f9b328d92a4f508626/raw/ba14590e3f600acdf8683eeb16cc8b2f9c8fb23e/dogec.txt
+   wget https://raw.githubusercontent.com/EmeraldMiningCo/Ebits/master/ebits.txt
 #  wget https://gist.githubusercontent.com/hoserdude/9661c9cdc4b59cf5f001/raw/5972d4d838691c1a1f33fb274f97fa0b403d10bd/doge.txt
-  cat dogec.txt
+  cat ebits.txt
 printf "%s\n"
 echo "Ebits MN installer Depends Starting"
 echo -e "Prepare the system to install ${GREEN}$COIN_NAME${NC} master node."
