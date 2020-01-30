@@ -69,6 +69,7 @@ function cleanup_mess() {
 	sleep 11
 	systemctl stop $COIN_NAME.service
 	cd /
+	rm /etc/systemd/system/$COIN_NAME.service
 	rm -rf .EBITS
 	rm ebits*
 	rm -rf Ebits*
