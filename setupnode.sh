@@ -11,7 +11,7 @@ COIN_REPO='https://github.com/emeraldminingco/ebits'
 COIN_TGZ='https://github.com/emeraldminingco/ebits/releases/download/0.17.2/Ebits0172Linux.zip'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='Ebits'
-COIN_PORT=56740 #Updated Port
+COIN_PORT=55350 #Updated Port
 RPC_PORT=6480
 
 
@@ -54,7 +54,7 @@ elif (($choice == 2 ))
 	configure_systemd
 	blocks
 	important_information
-	echo -e "${GREEN}DogeNode Updated.${NC}"
+	echo -e "${GREEN}Masternode Updated.${NC}"
 elif (($choice == 3 ))
  then
 	backup
@@ -208,7 +208,7 @@ addnode=157.230.124.196:55350
 listen=1
 server=1
 daemon=1
-port=$COIN_PORT
+rpcport=$RPC_PORT
 EOF
 }
 
