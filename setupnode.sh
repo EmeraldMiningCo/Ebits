@@ -174,8 +174,8 @@ After=network.target
 [Service]
 User=$USERNAME
 Group=$USERNAME
-Type=forking
-#PIDFile=$CONFIGFOLDER/$COIN_NAME.pid
+#Type=forking
+PIDFile=$CONFIGFOLDER/$COIN_NAME.pid
 ExecStart=$COIN_PATH$COIN_DAEMON -daemon -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER
 ExecStop=-$COIN_PATH$COIN_CLI -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER stop
 Restart=always
