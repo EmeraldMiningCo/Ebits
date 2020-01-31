@@ -199,8 +199,17 @@ function create_config() {
 rpcuser=$RPCUSER
 rpcpassword=$RPCPASSWORD
 rpcallowip=127.0.0.1
+addnode=136.244.107.116:55350
+addnode=144.202.26.222:55350
+addnode=45.32.213.51:55350
+addnode=209.246.143.26:55350
+addnode=144.202.76.108:55350
+addnode=167.179.116.117:55350
+addnode=45.77.229.250:55350
+addnode=45.63.78.82:55350
 addnode=155.138.242.159:55350
 addnode=209.250.253.96:55350
+addnode=206.189.193.231:55350
 addnode=144.202.48.69:55350
 addnode=134.209.198.90:55350
 addnode=2.111.74.86:55350
