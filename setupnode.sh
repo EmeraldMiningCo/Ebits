@@ -425,8 +425,7 @@ function important_information() {
  echo -e "Stop: ${RED}systemctl stop $COIN_NAME.service${NC}"
  echo -e "VPS_IP:PORT ${RED}$NODEIP:$COIN_PORT${NC}"
  echo -e "MASTERNODE PRIVATEKEY is: ${RED}$COINKEY${NC}"
- echo -e "Please check ${RED}$COIN_NAME${NC} is running with the following command: ${RED}systemctl status $COIN_NAME.service${NC}"
- systemctl status $COIN_NAME.service
+# echo -e "Please check ${RED}$COIN_NAME${NC} is running with the following command: ${RED}systemctl status $COIN_NAME.service${NC}"
  echo -e "================================================================================================================================"
 }
 
@@ -436,8 +435,8 @@ function setup_node() {
   create_key
   update_config
   #blocks
-  configure_systemd
-  start_service
+  #configure_systemd
+  #start_service
   important_information
 }
 
