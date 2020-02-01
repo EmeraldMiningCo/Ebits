@@ -416,6 +416,9 @@ function start_service() {
  }
 
 function important_information() {
+ cd /usr/local/bin
+ ./ebitsd -daemon
+ clear
  echo
  echo -e "================================================================================================================================"
  echo -e "$COIN_NAME Cold Masternode is up and running listening on port ${RED}$COIN_PORT${NC}."
