@@ -8,7 +8,7 @@ COIN_DAEMON='ebitsd'
 COIN_CLI='ebits-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_REPO='https://github.com/emeraldminingco/ebits'
-COIN_TGZ='https://github.com/EmeraldMiningCo/Ebits/releases/download/0.17.2.3/Ebits01723Linux.zip'
+COIN_TGZ='https://github.com/EmeraldMiningCo/Ebits/releases/download/0.17.2.4/ebits-0.17.2.4-linux.zip'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='Ebits'
 COIN_PORT=55350 #Updated Port
@@ -140,8 +140,7 @@ function download_node() {
   compile_error
   apt-get install -y unzip
 #   tar xvzf $COIN_ZIP -C $COIN_PATH >/dev/null 2>&1
-unzip Ebits01723Linux.zip
-cd Ebits01723Linux
+unzip ebits-0.17.2.4-linux.zip
 chmod -R 775 *
 cp * $COIN_PATH
 cd ..
