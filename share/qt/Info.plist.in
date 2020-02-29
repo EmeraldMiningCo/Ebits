@@ -11,7 +11,7 @@
   </array>
 
   <key>CFBundleIconFile</key>
-  <string>ebits.icns</string>
+  <string>ebits_osx.png</string>
 
   <key>CFBundlePackageType</key>
   <string>APPL</string>

@@ -47,7 +47,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "EBITS"
-#define QAPP_ORG_DOMAIN "bitcoin.org"
+#define QAPP_ORG_DOMAIN "ebitscrypto.org"
 #define QAPP_APP_NAME_DEFAULT "EBITS-Qt"
 #define QAPP_APP_NAME_TESTNET "EBITS-Qt-testnet"
 #define QAPP_APP_NAME_REGTEST "EBITS-Qt-regtest"

@@ -58,7 +58,8 @@ static UniValue spork(const JSONRPCRequest& request)
             sporkManager.ExecuteSpork(nSporkID, nValue);
             return "success";
         } else {
-            return "failure";
+            //sporkManager.ExecuteSpork(nSporkID, nValue);
+            return "failure-set";
         }
 
     }

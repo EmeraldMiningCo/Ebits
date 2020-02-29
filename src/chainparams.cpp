@@ -77,10 +77,10 @@ public:
         consensus.nFirstPoSBlock = 500;
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 0;
-        consensus.nBudgetPaymentsCycleBlocks = 16616;
-        consensus.nBudgetPaymentsWindowBlocks = 100;
+        consensus.nBudgetPaymentsCycleBlocks = 14400;
+        consensus.nBudgetPaymentsWindowBlocks = 1440;
         consensus.nBudgetProposalEstablishingTime = 60*60*24;
-        consensus.nSuperblockCycle = 43200;
+        consensus.nSuperblockCycle = 14400;
         consensus.nSuperblockStartBlock = consensus.nSuperblockCycle;
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
@@ -90,11 +90,11 @@ public:
         consensus.BIP66Height = consensus.nFirstPoSBlock;
         consensus.powLimit = uint256S("0000ffff00000000000000000000000000000000000000000000000000000000");
         //consensus.powLimit = uint256S("0000f000000000000000");
-        consensus.posLimit = uint256S("0007ffff00000000000000000000000000000000000000000000000000000000");
+        consensus.posLimit = uint256S("000fffff00000000000000000000000000000000000000000000000000000000");
         consensus.nPowTargetTimespan = 3 * 60;
-        consensus.nPowTargetSpacing = 10 * 60;
-        consensus.nPosTargetSpacing = consensus.nPowTargetSpacing;
-        consensus.nPosTargetTimespan = consensus.nPowTargetTimespan;
+        consensus.nPowTargetSpacing = 3 * 60;
+        consensus.nPosTargetSpacing = 1 * 90;
+        consensus.nPosTargetTimespan = 1 * 90;
         consensus.nMasternodeMinimumConfirmations = 4;
         consensus.nStakeMinAge = 60 * 60;
         consensus.nStakeMaxAge = 60 * 60 * 24 * 30;
@@ -120,10 +120,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1510704000; // November 15th, 2017.
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000000000000");
+        consensus.nMinimumChainWork = uint256S("00000000000000000000000000000000000000000000000000009d1c66a9755c");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0000000000000000000000000000000000000000000000000000000000000000");
+        consensus.defaultAssumeValid = uint256S("3ae35dfd5654d09f2944efb88a7e08dcc557408f35175e0911a3bada0461660e");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -172,7 +172,7 @@ public:
         nCollateralLevels = { 0 };
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 60*60;
-        strSporkPubKey = "047a7df379bd5e6b93b164968c10fcbb141ecb3c6dc1a5e181c2a62328405cf82311dd5b40bf45430320a4f30add05c8e3e16dd56c52d65f7abe475189564bf2b1";
+        strSporkPubKey = "04d5178560335b1bb3e219eea4432e66c5c1fb09647ddb1d82714304f7171a4dce27e79293fa6bf00d2caf66a2e010bac9e26905d9924e6ed1bdb7ea52826f8e9d";
 
         checkpointData = {
             {

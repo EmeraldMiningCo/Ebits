@@ -38,7 +38,7 @@ SplashScreen::SplashScreen(interfaces::Node& node, Qt::WindowFlags f, const Netw
     QString font = QApplication::font().toString();
 
     // define text to place
-    QString copyrightTextBTC   = QChar(0xA9) + QString("2009 ") + QString(tr("The Ebits developers"));
+    QString copyrightTextBTC   = QChar(0xA9) + QString("2019 ") + QString(tr("The Ebits developers"));
     QString titleAddText = networkStyle->getTitleAddText();
 
     // create a bitmap according to device pixelratio

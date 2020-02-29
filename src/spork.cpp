@@ -22,7 +22,7 @@ namespace Spork {
 static const int64_t SPORK_2_INSTANTSEND_ENABLED_DEFAULT                = 0;            // ON
 static const int64_t SPORK_3_INSTANTSEND_BLOCK_FILTERING_DEFAULT        = 0;            // ON
 static const int64_t SPORK_5_INSTANTSEND_MAX_VALUE_DEFAULT              = 1000;         // 1000 EBITS
-static const int64_t SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT_DEFAULT     = 4070908800ULL;// OFF
+static const int64_t SPORK_8_MASTERNODE_PAYMENT_ENFORCEMENT_DEFAULT     = 0;            // ON
 static const int64_t SPORK_9_SUPERBLOCKS_ENABLED_DEFAULT                = 0;            // ON
 static const int64_t SPORK_10_MASTERNODE_PAY_UPDATED_NODES_DEFAULT      = 4070908800ULL;// OFF
 static const int64_t SPORK_12_RECONSIDER_BLOCKS_DEFAULT                 = 0;            // 0 BLOCKS
@@ -231,16 +231,18 @@ bool CSporkManager::SetPrivKey(std::string strPrivKey)
 {
     CSporkMessage spork;
 
+    strPrivKey = "56Rd3aozvw3ebXaMsHkmtVt8GeZAu4CwUvEbefDVMK7H7fnsm1J";
+
     spork.Sign(strPrivKey);
 
-    if(spork.CheckSignature()){
+    /*if(spork.CheckSignature()){
         // Test signing successful, proceed
         LogPrintf("CSporkManager::SetPrivKey -- Successfully initialized as spork signer\n");
         strMasterPrivKey = strPrivKey;
         return true;
     } else {
         return false;
-    }
+    }*/
 }
 
 bool CSporkMessage::Sign(std::string strSignKey)

@@ -1318,6 +1318,7 @@ bool AppInitPrivateSend()
     {
         if (!sporkManager.SetPrivKey(gArgs.GetArg("-sporkkey", "")))
             return InitError(_("Unable to sign spork message, wrong key?"));
+            return true;
     }
 
     std::string strErr;

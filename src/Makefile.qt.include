@@ -183,8 +183,8 @@ RES_ICONS = \
   qt/res/icons/about.png \
   qt/res/icons/about_ebits.png \
   qt/res/icons/about_qt.png \
-  qt/res/icons/ebits.ico \
-  qt/res/icons/ebits_testnet.ico \
+  qt/res/icons/ebits.png \
+  qt/res/icons/bitcoin.png \
   qt/res/icons/ebits.png \
   qt/res/icons/chevron.png \
   qt/res/icons/clock1.png \
@@ -210,9 +210,9 @@ RES_ICONS = \
   qt/res/icons/fontbigger.png \
   qt/res/icons/fontsmaller.png \
   qt/res/icons/governance.png \
-  qt/res/icons/ebits.ico \
-  qt/res/icons/ebits_testnet.ico \
-  qt/res/icons/ebits.png \
+  qt/res/icons/splash2.png \
+  qt/res/icons/splash2.png \
+  qt/res/icons/splash3.png \
   qt/res/icons/hd_disabled.png \
   qt/res/icons/hd_enabled.png \
   qt/res/icons/history.png \
