@@ -91,6 +91,7 @@ struct Params {
     int64_t DifficultyAdjustmentInterval() const { return nPowTargetTimespan / nPowTargetSpacing; }
     uint256 nMinimumChainWork;
     uint256 defaultAssumeValid;
+    int defaultAssumeHeight;
     int nStakeMinAge;
     int nStakeMaxAge;
     int64_t nModifierInterval;

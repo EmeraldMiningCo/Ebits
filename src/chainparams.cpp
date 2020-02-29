@@ -124,6 +124,7 @@ public:
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("3ae35dfd5654d09f2944efb88a7e08dcc557408f35175e0911a3bada0461660e");
+        consensus.defaultAssumeHeight = 12250;
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.

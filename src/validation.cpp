@@ -3430,13 +3430,14 @@ static bool ContextualCheckBlock(const CBlock& block, CValidationState& state, c
     }
 
     // Check difficulty
-    if (block.nBits != GetNextWorkRequired(pindexPrev, consensusParams, block.IsProofOfStake()))
-        return state.DoS(100, false, REJECT_INVALID, "bad-diffbits", false, strprintf("incorrect difficulty: block pow=%d bits=%08x calc=%08x",
-                  block.IsProofOfWork() ? "Y" : "N", block.nBits, GetNextWorkRequired(pindexPrev, consensusParams, block.IsProofOfStake())));
-    else
-        LogPrintf("Block pow=%s bits=%08x found=%08x %s=%s\n", block.IsProofOfWork() ? "Y" : "N", GetNextWorkRequired(pindexPrev,
-                  consensusParams, block.IsProofOfStake()), block.nBits, block.IsProofOfWork() ? "powhash" : "hashproof",
-                  block.IsProofOfWork() ? block.GetPoWHash().ToString().c_str() : hashProofOfStake.ToString().c_str());
+    if(block.IsProofOfWork())    
+        if (block.nBits != GetNextWorkRequired(pindexPrev, consensusParams, block.IsProofOfStake()))
+            return state.DoS(100, false, REJECT_INVALID, "bad-diffbits", false, strprintf("incorrect difficulty: block pow=%d bits=%08x calc=%08x",
+                              block.IsProofOfWork() ? "Y" : "N", block.nBits, GetNextWorkRequired(pindexPrev, consensusParams, block.IsProofOfStake())));
+        else
+            LogPrintf("Block pow=%s bits=%08x found=%08x %s=%s\n", block.IsProofOfWork() ? "Y" : "N", GetNextWorkRequired(pindexPrev,
+                      consensusParams, block.IsProofOfStake()), block.nBits, block.IsProofOfWork() ? "powhash" : "hashproof",
+                      block.IsProofOfWork() ? block.GetPoWHash().ToString().c_str() : hashProofOfStake.ToString().c_str());
 
     // Start enforcing BIP113 (Median Time Past) using versionbits logic.
     int nLockTimeFlags = 0;
@@ -3540,6 +3541,8 @@ bool CChainState::AcceptBlockHeader(const CBlockHeader& block, CValidationState&
             pindex = miSelf->second;
             if (ppindex)
                 *ppindex = pindex;
+            if (chainparams.GetConsensus().defaultAssumeHeight >= pindex->nHeight)
+                return true;
             if (pindex->nStatus & BLOCK_FAILED_MASK)
                 return state.Invalid(error("%s: block %s is marked invalid", __func__, hash.ToString()), 0, "duplicate");
             return true;
